@@ -26,7 +26,7 @@ var FBSage = (function($) {
 
     // Fit them vids!
     $('main').fitVids();
- 
+
     // _initNav();
     // _initSearch();
     // _initLoadMore();
@@ -49,7 +49,7 @@ var FBSage = (function($) {
     // Scroll down to hash afer page load
     $(window).load(function() {
       if (window.location.hash) {
-        _scrollBody($(window.location.hash)); 
+        _scrollBody($(window.location.hash));
       }
     });
 
@@ -60,7 +60,7 @@ var FBSage = (function($) {
       wpOffset = $('#wpadminbar').height();
     } else {
       wpOffset = 0;
-    } 
+    }
     element.velocity("scroll", {
       duration: duration,
       delay: delay,

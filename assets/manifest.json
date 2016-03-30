@@ -12,6 +12,11 @@
       ],
       "main": true
     },
+    "customizer.js": {
+      "files": [
+        "scripts/customizer.js"
+      ]
+    },
     "jquery.js": {
       "bower": ["jquery"]
     },
@@ -26,6 +31,6 @@
     }
   },
   "config": {
-    "devUrl": "http://fb-sage.dev" 
-  } 
+    "devUrl": "http://fb-sage.dev"
+  }
 }

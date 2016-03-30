@@ -1,4 +1,9 @@
-@charset "UTF-8"; 
+@charset "UTF-8";
+
+// Automatically injected Bower dependencies via wiredep (never manually edit this block)
+// bower:scss
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
 
 // Reset
 @import "vendor/normalize";
