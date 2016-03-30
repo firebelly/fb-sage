@@ -18,7 +18,8 @@
   margin-bottom: ($line-height-computed / 2);
   height: auto;
 }
-@media (min-width: $screen-sm-min) {
+
+@include media-small {
   // Only float if not on an extra small device
   .alignleft {
     float: left;
@@ -31,15 +32,5 @@
 }
 
 // Captions
-.wp-caption {
-  @extend .thumbnail;
-}
-.wp-caption-text {
-  padding: $thumbnail-caption-padding;
-}
-
-// Text meant only for screen readers
-.screen-reader-text {
-  @extend .sr-only;
-  @extend .sr-only-focusable;
-}
+.wp-caption {}
+.wp-caption-text {}
