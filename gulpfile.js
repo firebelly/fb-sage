@@ -22,7 +22,6 @@ var uglify       = require('gulp-uglify');
 var rename       = require('gulp-rename');
 var svgstore     = require('gulp-svgstore');
 var svgmin       = require('gulp-svgmin');
-var svg2png      = require('gulp-svg2png');
 
 // See https://github.com/austinpray/asset-builder
 var manifest = require('asset-builder')('./assets/manifest.json');
@@ -277,7 +276,7 @@ gulp.task('clean', require('del').bind(null, [path.dist]));
 gulp.task('watch', ['styles', 'scripts'], function() {
   browserSync.init({
     files: ['{lib,templates}/**/*.php', '*.php'],
-    // proxy: config.devUrl,
+    proxy: config.devUrl,
     notify: false,
     snippetOptions: {
       whitelist: ['/wp-admin/admin-ajax.php'],
