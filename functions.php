@@ -19,15 +19,15 @@ $sage_includes = [
 ];
 
 $firebelly_includes = [
-  'lib/disable-comments.php',          // Disables WP comments in admin and frontend
-  'lib/fb_init.php',                   // FB theme setups
-  'lib/fb_assets.php',                 // FB assets
-  'lib/media.php',                     // FB media
-  'lib/ajax.php',                      // AJAX functions
-  'lib/custom-functions.php',          // Rando utility functions and miscellany
-  'lib/cmb2-custom-fields.php',        // Custom CMB2
-  'lib/page-meta-boxes.php',           // Various tweaks for multiple post types
-  'lib/post-meta-boxes.php',           // Various tweaks for multiple post types
+  'lib/fb-disable-comments.php',   // Disables WP comments in admin and frontend
+  'lib/fb-init.php',               // Various setup and config
+  'lib/fb-media.php',              // Media functions (image size definitions, image helpers)
+  'lib/fb-utils.php',              // Utility functions
+  'lib/fb-ajax.php',               // AJAX functions
+  'lib/fb-cmb2.php',               // CMB2 helper functions
+  'lib/fb-page-fields.php',        // Extra fields for pages
+  'lib/fb-post-fields.php',        // Extra fields for posts + CPTs
+  // 'lib/cpt-example.php',           // Example CPT
 ];
 
 $sage_includes = array_merge($sage_includes, $firebelly_includes);
