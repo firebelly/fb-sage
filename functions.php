@@ -27,6 +27,7 @@ $firebelly_includes = [
   'lib/fb-cmb2.php',               // CMB2 helper functions
   'lib/fb-page-fields.php',        // Extra fields for pages
   'lib/fb-post-fields.php',        // Extra fields for posts + CPTs
+  'lib/fb-site-options.php',       // Custom site options page for admin
   // 'lib/cpt-example.php',           // Example CPT
 ];
 
