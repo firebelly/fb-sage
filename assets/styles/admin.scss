@@ -48,6 +48,7 @@
 
 @media screen and (min-width: 768px) {
   .cmb-row.-half {
+    border-bottom: none !important;
     .cmb-th,
     .cmb-td {
       float: none;
@@ -57,10 +58,10 @@
       }
     }
     float: left;
-    width: 20%;
+    width: 48%;
     &:nth-child(2) {
       float: right;
-      width: 78%;
+      width: 50%;
       &:after {
         content: '';
         display: table;

@@ -31,8 +31,8 @@ function metaboxes() {
     'type'      => 'text_medium',
     'column'    => array( // adds this field to admin columns
       'position' => 2,
-        'name'     => 'Type',
-      ),
+      'name'     => 'Type',
+    ),
     // 'desc'      => 'Help text',
   ]);
 
