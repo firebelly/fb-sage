@@ -273,8 +273,9 @@ gulp.task('svgs', function() {
 gulp.task('watch', ['styles', 'scripts'], function() {
   browserSync.init({
     files: ['{lib,templates}/**/*.php', '*.php'],
-//    proxy: config.devUrl,
+    proxy: config.devUrl,
     notify: false,
+    open: false,
     snippetOptions: {
       whitelist: ['/wp-admin/admin-ajax.php'],
       blacklist: ['/wp-admin/**']
