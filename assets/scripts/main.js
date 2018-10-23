@@ -4,23 +4,21 @@
 // Good Design for Good Reason for Good Namespace
 var FBSage = (function($) {
 
-  var screen_width = 0,
-      breakpoint_small = false,
+  var breakpoint_small = false,
       breakpoint_medium = false,
       breakpoint_large = false,
       breakpoint_array = [480,1000,1200],
+      $body,
       $document,
-      $sidebar,
-      loadingTimer,
-      page_at;
+      loadingTimer;
 
   function _init() {
-    // touch-friendly fast clicks
-    FastClick.attach(document.body);
-
     // Cache some common DOM queries
+    $body = $(body);
     $document = $(document);
-    $('body').addClass('loaded');
+
+    // DOM is loaded
+    $body.addClass('loaded');
 
     // Set screen size vars
     _resize();
