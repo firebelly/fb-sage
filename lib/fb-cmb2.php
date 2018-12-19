@@ -27,3 +27,27 @@ function get_post_options($query_args) {
 // function get_people() {
 //     return get_post_options(['post_type' => 'person']);
 // }
+
+/**
+ * Exclude metabox on specific slugs
+ * @param  object $cmb CMB2 object
+ * @return bool        True/false whether to show the metabox
+ */
+function cmb2_exclude_for_slugs($cmb) {
+  $slugs_to_exclude = $cmb->prop('exclude_slugs', []);
+  $post_slug = get_post_field('post_name', $cmb->object_id());
+  $excluded = in_array($post_slug, $slugs_to_exclude, true);
+  return !$excluded;
+}
+
+/**
+ * Show metabox on specific slugs
+ * @param  object $cmb CMB2 object
+ * @return bool        True/false whether to show the metabox
+ */
+function cmb2_show_for_slugs($cmb) {
+  $slugs_to_show = $cmb->prop('show_slugs', []);
+  $post_slug = get_post_field('post_name', $cmb->object_id());
+  $show = in_array($post_slug, $slugs_to_show, true);
+  return $show;
+}
