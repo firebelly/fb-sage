@@ -29,11 +29,13 @@ function get_post_options($query_args) {
 // }
 
 /**
- * Exclude metabox on specific slugs
+ * Exclude metabox on specific slugs, use:
+ *   'exclude_slugs'    => array('page-slug'),
+ *   'show_on_cb'    => '\Firebelly\CMB2\exclude_for_slugs',
  * @param  object $cmb CMB2 object
  * @return bool        True/false whether to show the metabox
  */
-function cmb2_exclude_for_slugs($cmb) {
+function exclude_for_slugs($cmb) {
   $slugs_to_exclude = $cmb->prop('exclude_slugs', []);
   $post_slug = get_post_field('post_name', $cmb->object_id());
   $excluded = in_array($post_slug, $slugs_to_exclude, true);
@@ -41,11 +43,13 @@ function cmb2_exclude_for_slugs($cmb) {
 }
 
 /**
- * Show metabox on specific slugs
+ * Show metabox on specific slugs, use:
+ *   'show_slugs'    => array('page-slug'),
+ *   'show_on_cb'    => '\Firebelly\CMB2\show_for_slugs',
  * @param  object $cmb CMB2 object
  * @return bool        True/false whether to show the metabox
  */
-function cmb2_show_for_slugs($cmb) {
+function show_for_slugs($cmb) {
   $slugs_to_show = $cmb->prop('show_slugs', []);
   $post_slug = get_post_field('post_name', $cmb->object_id());
   $show = in_array($post_slug, $slugs_to_show, true);
