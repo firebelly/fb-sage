@@ -5,11 +5,18 @@
 
 namespace Firebelly\PostTypes\Example;
 use PostTypes\PostType; // see https://github.com/jjgrainger/PostTypes
+use PostTypes\Taxonomy;
 
 $examples = new PostType('example', [
-  'supports'   => ['title', 'editor', 'thumbnail'],
+  'taxonomies' => ['example_taxonomy'],
+  'supports'   => ['title', 'editor', 'thumbnail', 'revisions'],
   'rewrite'    => ['with_front' => false],
 ]);
+
+// Custom taxonomies
+$example_taxonomy = new Taxonomy('example_taxonomy');
+$example_taxonomy->register();
+
 $examples->register();
 
 /**
