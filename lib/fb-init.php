@@ -52,7 +52,7 @@ function simplify_tinymce($settings) {
     $settings['formats'] = "{ underline: { inline: 'u', exact: true} }";
 
   // What goes into the toolbars. Add 'wp_adv' to get the Toolbar toggle button back
-  $settings['toolbar1'] = 'styleselect,bold,italic,formatselect,bullist,numlist,blockquote,link,unlink,hr,fullscreen';
+  $settings['toolbar1'] = 'formatselect,bold,italic,bullist,numlist,blockquote,link,unlink,hr,fullscreen,styleselect';
   $settings['toolbar2'] = '';
   $settings['toolbar3'] = '';
   $settings['toolbar4'] = '';
