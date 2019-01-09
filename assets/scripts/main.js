@@ -14,7 +14,7 @@ var FBSage = (function($) {
 
   function _init() {
     // Cache some common DOM queries
-    $body = $(window.body);
+    $body = $(document.body);
     $document = $(document);
 
     // DOM is loaded
