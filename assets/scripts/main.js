@@ -4,10 +4,8 @@
 // Good Design for Good Reason for Good Namespace
 var FBSage = (function($) {
 
-  var breakpoint_small = false,
-      breakpoint_medium = false,
-      breakpoint_large = false,
-      breakpoint_array = [480,1000,1200],
+  var breakpoints = [],
+      breakpointClasses = ['xl','lg','nav','md','sm','xs'],
       $body,
       $document,
       loadingTimer;
@@ -60,11 +58,11 @@ var FBSage = (function($) {
     } else {
       wpOffset = 0;
     }
-    element.velocity("scroll", {
+    element.velocity('scroll', {
       duration: duration,
       delay: delay,
       offset: -wpOffset
-    }, "easeOutSine");
+    }, 'easeOutSine');
   }
 
   function _initSearch() {
@@ -134,7 +132,7 @@ var FBSage = (function($) {
             var $data = $(data);
             if (loadingTimer) { clearTimeout(loadingTimer); }
             more_container.append($data).removeClass('loading');
-            if (breakpoint_medium) {
+            if (breakpoints.md) {
               more_container.masonry('appended', $data, true);
             }
             $load_more.attr('data-page-at', page+1);
@@ -160,16 +158,16 @@ var FBSage = (function($) {
 
   // Called in quick succession as window is resized
   function _resize() {
-    screenWidth = document.documentElement.clientWidth;
-    breakpoint_small = (screenWidth > breakpoint_array[0]);
-    breakpoint_medium = (screenWidth > breakpoint_array[1]);
-    breakpoint_large = (screenWidth > breakpoint_array[2]);
+    // Check breakpoint indicator in DOM ( :after { content } is controlled by CSS media queries )
+    breakpointIndicatorString = window.getComputedStyle(
+      document.querySelector('#breakpoint-indicator'), ':after'
+    ).getPropertyValue('content').replace(/['"]/g, '');
+    breakpoints = {};
+    // Populate hash of breakpoints, use `if (breakpoints.md) {` to test if breakpoint is active
+    for (var i = 0; i < breakpointClasses.length; i++) {
+      breakpoints[breakpointClasses[i]] = (breakpointIndicatorString === breakpointClasses[i] || (i>0 && breakpoints[breakpointClasses[i-1]]));
+    }
   }
-
-  // Called on scroll
-  // function _scroll(dir) {
-  //   var wintop = $(window).scrollTop();
-  // }
 
   // Public functions
   return {

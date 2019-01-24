@@ -6,7 +6,7 @@ $padding: 1em;
 .grid {
   width: 100%;
   display: block;
-  @include min-screen($breakpoint-medium) {
+  @include min-screen($breakpoint-md) {
     display: flex;
   }
   &.-persist {
@@ -39,7 +39,7 @@ $padding: 1em;
   }
 }
 
-@include min-screen($breakpoint-medium) {
+@include min-screen($breakpoint-md) {
   .flex-item {
     flex-basis: auto;
   }

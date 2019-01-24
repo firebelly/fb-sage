@@ -8,6 +8,7 @@ use Roots\Sage\Wrapper;
 <!--[if gt IE 9]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
   <?php get_template_part('templates/head'); ?>
   <body <?php body_class(); ?>>
+    <div id="breakpoint-indicator"></div>
     <?php
       do_action('get_header');
       get_template_part('templates/header');
