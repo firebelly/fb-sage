@@ -24,6 +24,26 @@ function metaboxes() {
     'type'    => 'checkbox',
   ]);
 
+  $seo_fields = new_cmb2_box([
+    'id'            => $prefix . 'seo_fields',
+    'title'         => esc_html__( 'SEO', 'cmb2' ),
+    'object_types'  => ['post', 'page'],
+    'context'       => 'normal',
+    'priority'      => 'default',
+  ]);
+  $seo_fields->add_field([
+    'name'    => esc_html__( 'SEO Title', 'cmb2' ),
+    'id'      => $prefix . 'seo_title',
+    'desc'    => 'Custom title override to improve SEO — limit to ~70 chars',
+    'type'    => 'text',
+  ]);
+  $seo_fields->add_field([
+    'name'    => esc_html__( 'SEO Description', 'cmb2' ),
+    'id'      => $prefix . 'seo_description',
+    'desc'    => 'Used for meta description to improve SEO, and for social sharing — limit to ~160 chars',
+    'type'    => 'textarea_small',
+  ]);
+
   // $image_slideshow = new_cmb2_box([
   //   'id'            => 'image_slideshow',
   //   'title'         => esc_html__( 'Image Slideshow', 'cmb2' ),
