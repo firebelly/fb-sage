@@ -2,7 +2,6 @@
 use Roots\Sage\Setup;
 use Roots\Sage\Wrapper;
 ?>
-
 <!DOCTYPE html>
 <!--[if IE 9 ]> <html class="no-js ie9 lt-ie10" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
